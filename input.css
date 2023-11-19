@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* hamburger menu */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.35s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: gray;
+  transform: rotate(0);
+  transition: all 0.5s;
+  background-color: white;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+.fixed_nav {
+  background-color: black;
+  padding: 1.5rem 0rem;
+}
+
+#hero {
+  background: url("../images/desktop/image-header.jpg");
+  max-height: 50%;
+  height: 44.5rem;
+  background-position-x: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer_img {
+  filter: invert(80%) sepia(21%) saturate(1080%) hue-rotate(116deg)
+    brightness(93%) contrast(86%);
+}
+
+@media screen and (max-width: 500px) {
+  #hero {
+    max-height: 50%;
+    height: 44.5rem;
+    /* width: 100vw; */
+    background: url("../images/mobile/image-header.jpg");
+    background-position-x: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .creative {
+    font-size: 2.3rem !important;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .apple {
+    bottom: 0;
+  }
+  .apple h3 {
+    font-size: 20px;
+  }
+  .apple p {
+    font-size: 15px;
+  }
+}
